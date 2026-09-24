@@ -22,3 +22,26 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 ''')
 print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.")
+
+# Convert inputs to .lower() so typing "Left" or "WAIT" still works!
+a = input('You\'re at a crossroad. Where do you want to go? Type "left" or "right": ').lower()
+
+if a == "left":
+    print("Nice choice!")
+    b = input('Do you want to swim to land or wait for a boat? Type "wait" or "swim": ').lower()
+
+    if b == "wait":
+        print("Correct!")
+        c = input('Which door do you want to go into? Type "green", "blue", or "white": ').lower()
+
+        if c == "blue":
+            print("YOU FOUND GOLD!!!!!!!")
+        elif c == "white" or c == "green":
+            print("You entered a room full of traps. Game Over.")
+        else:
+            print("Game Over.")
+    else:
+        print("You were attacked by trout. Game Over.")
+else:
+    print("You fell into a hole. Game Over.")
+

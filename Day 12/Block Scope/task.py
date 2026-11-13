@@ -1,0 +1,53 @@
+game_level = 3
+emenies = ["skeliton", "zombie", "aliean"]
+if game_level < 5:
+    new_emenies = emenies[0]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

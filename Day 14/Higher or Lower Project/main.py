@@ -323,60 +323,47 @@ data = [
     }
 ]
 
-
-
-
 continue1 = True
 
-
-
-
-
-
-
-
-
-
-import random
-
-# 1. Keep your logo, vs, and data list at the top just as you have them
-
-# 2. Print only the main logo at the very beginning
-print(logo)
-
-# 3. Pick two random accounts from the data list
-account_a = random.choice(data)
-account_b = random.choice(data)
-
-# 4. Pull out the details you need using dictionary keys
-print(f"Compare A: {account_a['name']}, a {account_a['description']}, from {account_a['country']}.")
-
-# Print the vs graphic between the two choices
-print(vs)
-
-print(f"Against B: {account_b['name']}, a {account_b['description']}, from {account_b['country']}.")
-
-# --- YOUR NEXT STEPS TO COMPLETE THE GAME ---
-# TODO: Ask the user to guess 'A' or 'B' using input()
-# TODO: Check if account_a['follower_count'] > account_b['follower_count']
-# TODO: Track the score and repeat with a while loop
-
-
+correct = 0
+false_correct = 0
 while continue1 == True:
 
+    print(logo)
 
-    random_thing = random.choice(data)
+    real_correct = 0
+    account_a = random.choice(data)
+    account_b = random.choice(data)
 
+    print(f"Compare a: {account_a['name']}, a {account_a['description']}, from {account_a['country']}.")
 
-    print(random_thing['name'])
+    print(vs)
 
+    print(f"Against B: {account_b['name']}, a {account_b['description']}, from {account_b['country']}.")
 
-    a = input(f"{random_thing['name']}, a {random_thing['description']}, from {random_thing['country']}.")
-    print("or is:")
-    random_thing2 = random.choice(data)
-    b = input(random_thing['name'])
-    if random_thing2['follower_count'] == b:
+    a_input = input("who has a larger follower count for the first one print a for the second one type b")
+    if a_input == "a" and account_a['follower_count'] > account_b['follower_count']:
+        print("nice job!")
+        correct + 1
+        print(correct)
+    elif a_input == "b" and account_b['follower_count'] > account_a['follower_count']:
+        print("nice job!")
+        real_correct += 1
+        false_correct += real_correct
+
+        print(real_correct)
+    else:
+        print("you lose")
+        print(f"you have: {false_correct} correct")
         continue1 = False
+
+
+
+
+
+
+
+
 
 
 
